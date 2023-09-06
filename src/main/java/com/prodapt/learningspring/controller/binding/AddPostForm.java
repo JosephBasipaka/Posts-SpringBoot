@@ -1,6 +1,5 @@
 package com.prodapt.learningspring.controller.binding;
 
-import lombok.Data;
 
 public class AddPostForm {
   private String content;

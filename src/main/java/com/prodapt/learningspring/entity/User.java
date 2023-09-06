@@ -13,21 +13,25 @@ import lombok.Data;
 public class User {
   @Id
   @GeneratedValue(strategy=GenerationType.IDENTITY)
-  private int id;
+  private long id;
   @Column
   private String name;
   
+  @Column
+  private String password;
+  
 	public User() {
 	}
-	public User(int id, String name) {
+	public User(long id, String name,String password) {
 		super();
 		this.id = id;
 		this.name = name;
+		this.password = password;
 	}
-	public int getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -36,5 +40,12 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
 	  
 }

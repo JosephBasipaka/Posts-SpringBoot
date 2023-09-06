@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import lombok.Data;
@@ -14,7 +15,7 @@ import lombok.Data;
 public class Post {
   @Id
   @GeneratedValue(strategy=GenerationType.IDENTITY)
-  private int id;
+  private long id;
   
   private String content;
   
@@ -27,18 +28,18 @@ public class Post {
 	super();
 }
 
-public Post(int id, String content, User author) {
+public Post(long id, String content, User author) {
 	super();
 	this.id = id;
 	this.content = content;
 	this.author = author;
 }
 
-public int getId() {
+public long getId() {
 	return id;
 }
 
-public void setId(int id) {
+public void setId(long id) {
 	this.id = id;
 }
 

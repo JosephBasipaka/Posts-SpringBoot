@@ -5,7 +5,7 @@ import org.springframework.data.repository.Repository;
 
 import com.prodapt.learningspring.entity.LikeRecord;
 
-public interface LikeCountRepository extends Repository<LikeRecord, Integer>{
+public interface LikeCountRepository extends Repository<LikeRecord, Long>{
   @Query(value = "select count(*) from `like_record` where post_id = ?1", nativeQuery=true)
   Integer countByPostIdnative(Integer postId);
   

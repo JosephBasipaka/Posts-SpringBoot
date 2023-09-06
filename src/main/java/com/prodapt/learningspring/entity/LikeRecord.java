@@ -11,7 +11,7 @@ import lombok.Data;
 public class LikeRecord {
 	@Column(unique=true)
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private long id;
 	
 	@EmbeddedId
 	private LikeId likeId;
@@ -19,17 +19,17 @@ public class LikeRecord {
   public LikeRecord() {
 	}
 
-public LikeRecord(int id, LikeId likeId) {
+public LikeRecord(long id, LikeId likeId) {
 		super();
 		this.id = id;
 		this.likeId = likeId;
 	}
 
-public int getId() {
+public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

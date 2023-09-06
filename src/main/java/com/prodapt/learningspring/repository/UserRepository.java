@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.prodapt.learningspring.entity.User;
 
 @Repository
-public interface UserRepository extends CrudRepository<User, Integer>{
+public interface UserRepository extends CrudRepository<User, Long>{
   Optional<User> findByName(String name); 
   Integer countByName(String name);
   @Query(value = "select * from user where name = ?1", nativeQuery = true)
